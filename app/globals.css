@@ -180,4 +180,16 @@
   .bg-soft-gray {
     background-color: var(--color-soft-gray);
   }
+
+  .bg-electric-blue {
+    background-color: var(--color-electric-blue);
+  }
+
+  .text-teal {
+    color: var(--color-teal);
+  }
+
+  .fill-gold {
+    fill: var(--color-gold);
+  }
 }
