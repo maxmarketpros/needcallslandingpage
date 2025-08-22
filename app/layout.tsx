@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   description:
     "Websites, Google Business Profiles, and Local SEO that make your phone ring. Irvine-based digital marketing experts.",
   generator: "v0.app",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 }
 
 export default function RootLayout({

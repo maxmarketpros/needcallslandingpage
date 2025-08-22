@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Phone, ArrowLeft, Clock, Users } from "lucide-react"
-import Link from "next/link"
+
 
 export default function ThankYouPage() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -29,15 +29,14 @@ export default function ThankYouPage() {
             </div>
 
             <div className="hidden md:flex items-center gap-2 sm:gap-4">
-              <Link href="/">
-                <Button
-                  variant="ghost"
-                  className="text-gray-700 hover:text-blue-600 font-medium hover:bg-blue-50 transition-all duration-300 text-sm sm:text-base px-2 sm:px-4 rounded-full"
-                >
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                  Back to Home
-                </Button>
-              </Link>
+              <Button
+                variant="ghost"
+                onClick={() => window.location.href = '/'}
+                className="text-gray-700 hover:text-blue-600 font-medium hover:bg-blue-50 transition-all duration-300 text-sm sm:text-base px-2 sm:px-4 rounded-full"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Home
+              </Button>
               <Button
                 size="sm"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-2 sm:px-4 py-2 font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 text-xs sm:text-sm"
@@ -153,16 +152,15 @@ export default function ThankYouPage() {
                 Call Us Now (949) 603-0389
               </Button>
 
-              <Link href="/">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg font-semibold rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95"
-                >
-                  <ArrowLeft className="mr-3 h-5 w-5" />
-                  Return to Home
-                </Button>
-              </Link>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => window.location.href = '/'}
+                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg font-semibold rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95"
+              >
+                <ArrowLeft className="mr-3 h-5 w-5" />
+                Return to Home
+              </Button>
             </div>
           </div>
         </div>
