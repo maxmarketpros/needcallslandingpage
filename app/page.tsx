@@ -440,7 +440,7 @@ export default function LandingPage() {
 
             <Card className="relative shadow-2xl border-0 bg-white/90 backdrop-blur-sm">
               <CardContent className="p-6 sm:p-10">
-                <form name="contact" method="POST" data-netlify="true" className="space-y-6">
+                <form name="contact" method="POST" data-netlify="true" action="/thank-you" className="space-y-6">
                   <input type="hidden" name="form-name" value="contact" />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
