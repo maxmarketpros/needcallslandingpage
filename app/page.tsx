@@ -20,13 +20,6 @@ import {
 } from "lucide-react"
 
 export default function LandingPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    businessName: "",
-    email: "",
-  })
-
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -57,11 +50,7 @@ export default function LandingPage() {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-  }
+
 
   const scrollToForm = () => {
     document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })
@@ -451,7 +440,7 @@ export default function LandingPage() {
 
             <Card className="relative shadow-2xl border-0 bg-white/90 backdrop-blur-sm">
               <CardContent className="p-6 sm:p-10">
-                <form name="contact" method="POST" data-netlify="true" className="space-y-6" onSubmit={handleSubmit}>
+                <form name="contact" method="POST" data-netlify="true" className="space-y-6">
                   <input type="hidden" name="form-name" value="contact" />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -463,8 +452,6 @@ export default function LandingPage() {
                         id="name"
                         name="name"
                         placeholder="Enter your full name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="h-12 sm:h-14 text-base sm:text-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 hover:border-gray-300"
                         required
                       />
@@ -479,8 +466,6 @@ export default function LandingPage() {
                         name="email"
                         type="email"
                         placeholder="Enter your email"
-                        value={formData.email || ""}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="h-12 sm:h-14 text-base sm:text-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 hover:border-gray-300"
                         required
                       />
@@ -497,8 +482,6 @@ export default function LandingPage() {
                         name="phone"
                         type="tel"
                         placeholder="(555) 123-4567"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="h-12 sm:h-14 text-base sm:text-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 hover:border-gray-300"
                         required
                       />
@@ -512,8 +495,6 @@ export default function LandingPage() {
                         id="business"
                         name="business"
                         placeholder="Your business name"
-                        value={formData.businessName}
-                        onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
                         className="h-12 sm:h-14 text-base sm:text-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 hover:border-gray-300"
                         required
                       />
@@ -529,18 +510,6 @@ export default function LandingPage() {
                       <Phone className="mr-3 h-5 w-5 sm:h-6 sm:w-6" />
                       Schedule my free strategy call
                     </Button>
-
-                    <div className="mt-4">
-                      <Button
-                        type="button"
-                        size="lg"
-                        onClick={() => window.open("tel:(949) 603-0389")}
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 sm:py-4 text-base sm:text-lg rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 active:scale-95"
-                      >
-                        <Phone className="mr-3 h-4 w-4 sm:h-5 sm:w-5" />
-                        Call Now (949) 603-0389
-                      </Button>
-                    </div>
                   </div>
 
                   <p className="text-center text-sm text-gray-500 mt-4">
@@ -549,6 +518,19 @@ export default function LandingPage() {
                 </form>
               </CardContent>
             </Card>
+
+            {/* Call Now Button - Outside the form box */}
+            <div className="mt-8">
+              <Button
+                type="button"
+                size="lg"
+                onClick={() => window.open("tel:(949) 603-0389")}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 sm:py-4 text-base sm:text-lg rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 active:scale-95"
+              >
+                <Phone className="mr-3 h-4 w-4 sm:h-5 sm:w-5" />
+                Call Now (949) 603-0389
+              </Button>
+            </div>
           </div>
         </div>
       </section>
