@@ -84,8 +84,11 @@ export default function LandingPage() {
 
   const handleStrategyCall = () => {
     if (isMobile) {
-      // On mobile, redirect directly to the form section
-      window.location.href = "#lead-form"
+      // On mobile, scroll directly to the form header with "Schedule Your Free Call"
+      const formElement = document.getElementById("strategy-form")
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: "smooth", block: "start" })
+      }
     } else {
       // On desktop, smooth scroll to form
       scrollToForm()
@@ -1332,7 +1335,7 @@ export default function LandingPage() {
               <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(59,130,246,0.02)_25%,transparent_25%),linear-gradient(-45deg,rgba(59,130,246,0.02)_25%,transparent_25%)] bg-[size:2rem_2rem]"></div>
               
               {/* Form header */}
-              <div className="relative text-center mb-8">
+              <div id="strategy-form" className="relative text-center mb-8">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl">
                   <Phone className="h-8 w-8 text-white animate-pulse" />
                 </div>
