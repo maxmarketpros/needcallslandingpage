@@ -139,7 +139,7 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/40 to-indigo-50/20 pt-20 pb-20 md:pt-32 md:pb-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/40 to-indigo-50/20 pt-16 pb-16 sm:pt-20 sm:pb-20 md:pt-32 md:pb-32">
         {/* Sophisticated background elements */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.08),transparent_60%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.06),transparent_60%)]"></div>
@@ -160,10 +160,10 @@ export default function LandingPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Main Content */}
-            <div className="relative z-10 text-center lg:text-left px-4 flex flex-col items-center lg:items-start">
+            <div className="relative z-10 text-center lg:text-left px-2 sm:px-4 flex flex-col items-center lg:items-start max-w-full">
               {/* Enhanced trust indicator badge */}
               <div
-                className={`inline-flex items-center gap-3 bg-gradient-to-r from-white/90 to-blue-50/90 backdrop-blur-md border border-blue-200/50 text-blue-800 px-6 py-3 rounded-full text-sm font-bold mb-8 shadow-2xl transition-all duration-700 ease-out hover:scale-105 hover:shadow-xl group ${
+                className={`inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-white/90 to-blue-50/90 backdrop-blur-md border border-blue-200/50 text-blue-800 px-3 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-2xl transition-all duration-700 ease-out hover:scale-105 hover:shadow-xl group max-w-full ${
                   isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
@@ -183,9 +183,9 @@ export default function LandingPage() {
               </div>
 
               {/* Enhanced headline with better hierarchy */}
-              <h1 className="font-black mb-8 leading-tight">
+              <h1 className="font-black mb-6 sm:mb-8 leading-tight max-w-full">
                 <div
-                  className={`text-5xl md:text-6xl lg:text-7xl text-slate-900 transition-all duration-700 ease-out hover:scale-105 transform-gpu ${
+                  className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-slate-900 transition-all duration-700 ease-out hover:scale-105 transform-gpu ${
                     isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{
@@ -196,7 +196,7 @@ export default function LandingPage() {
                   Your Phone Should Be
                 </div>
                 <div
-                  className={`text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-600 bg-clip-text text-transparent transition-all duration-700 ease-out delay-150 hover:scale-105 transform-gpu relative whitespace-nowrap ${
+                  className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-600 bg-clip-text text-transparent transition-all duration-700 ease-out delay-150 hover:scale-105 transform-gpu relative ${
                     isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{
@@ -208,7 +208,7 @@ export default function LandingPage() {
                   <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/5 to-violet-600/5 blur-xl -z-10 rounded-lg"></div>
                 </div>
                 <div
-                  className={`text-lg md:text-xl lg:text-2xl text-blue-600 font-bold mt-4 transition-all duration-700 ease-out delay-300 ${
+                  className={`text-base sm:text-lg md:text-xl lg:text-2xl text-blue-600 font-bold mt-3 sm:mt-4 transition-all duration-700 ease-out delay-300 ${
                     isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                 >
@@ -218,17 +218,17 @@ export default function LandingPage() {
 
               {/* Enhanced value proposition */}
               <div
-                className={`mb-10 transition-all duration-700 ease-out delay-400 ${
+                className={`mb-8 sm:mb-10 transition-all duration-700 ease-out delay-400 max-w-full ${
                   isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
-                <p className="text-xl md:text-2xl text-slate-700 mb-6 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                  We build <span className="font-bold text-slate-900 bg-gradient-to-r from-blue-600/10 to-violet-600/10 px-2 py-1 rounded-lg">high-converting websites</span> and 
-                  <span className="font-bold text-slate-900 bg-gradient-to-r from-violet-600/10 to-cyan-600/10 px-2 py-1 rounded-lg"> dominate Google search</span> so qualified customers find you first and call you instead of your competitors.
+                <p className="text-lg sm:text-xl md:text-2xl text-slate-700 mb-4 sm:mb-6 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium px-2 sm:px-0">
+                  We build <span className="font-bold text-slate-900 bg-gradient-to-r from-blue-600/10 to-violet-600/10 px-1 sm:px-2 py-1 rounded-lg">high-converting websites</span> and 
+                  <span className="font-bold text-slate-900 bg-gradient-to-r from-violet-600/10 to-cyan-600/10 px-1 sm:px-2 py-1 rounded-lg"> dominate Google search</span> so qualified customers find you first and call you instead of your competitors.
                 </p>
                 
                 {/* Benefit highlights */}
-                <div className="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto lg:mx-0 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-8 px-2 sm:px-0">
                   <div className="flex items-center gap-2 text-slate-700">
                     <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full animate-pulse"></div>
                     <span className="font-semibold text-sm">More Calls</span>
@@ -246,7 +246,7 @@ export default function LandingPage() {
 
               {/* Enhanced CTAs with better design and clearance */}
               <div
-                className={`relative z-20 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start items-center mb-10 p-4 transition-all duration-700 ease-out delay-500 w-full ${
+                className={`relative z-20 flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center lg:justify-start items-center mb-8 sm:mb-10 p-2 sm:p-4 transition-all duration-700 ease-out delay-500 w-full max-w-full ${
                   isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
@@ -255,13 +255,13 @@ export default function LandingPage() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
                   <Button
                     size="lg"
-                    className="relative group bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-10 py-5 text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 hover:-translate-y-2 active:scale-95"
+                    className="relative group bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-6 sm:px-10 py-3 sm:py-5 text-lg sm:text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 hover:-translate-y-2 active:scale-95 w-full sm:w-auto"
                     onClick={() => window.open("tel:(949) 603-0389")}
                     style={{fontFamily: '"Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'}}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center justify-center gap-2 sm:gap-3">
                       <div className="relative">
-                        <Phone className="h-7 w-7 group-hover:animate-bounce" />
+                        <Phone className="h-5 w-5 sm:h-7 sm:w-7 group-hover:animate-bounce" />
                         <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
                       </div>
                       <span className="font-bold">Call (949) 603-0389</span>
@@ -277,11 +277,11 @@ export default function LandingPage() {
                   <Button
                     size="lg"
                     onClick={scrollToForm}
-                    className="relative z-30 bg-white/95 backdrop-blur-sm border-2 border-blue-600/50 text-blue-700 hover:bg-blue-600 hover:text-white px-10 py-5 text-lg font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 group"
+                    className="relative z-30 bg-white/95 backdrop-blur-sm border-2 border-blue-600/50 text-blue-700 hover:bg-blue-600 hover:text-white px-6 sm:px-10 py-3 sm:py-5 text-base sm:text-lg font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 group w-full sm:w-auto"
                     style={{fontFamily: '"Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'}}
                   >
-                    <div className="flex items-center gap-3">
-                      <TrendingUp className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                    <div className="flex items-center justify-center gap-2 sm:gap-3">
+                      <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6 group-hover:scale-110 transition-transform duration-300" />
                       <span className="font-semibold">Get Free Strategy Call</span>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-violet-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -304,7 +304,7 @@ export default function LandingPage() {
 
               {/* Trust indicators row */}
               <div
-                className={`flex flex-wrap justify-center lg:justify-start items-center gap-6 text-sm text-slate-600 transition-all duration-700 ease-out delay-700 w-full ${
+                className={`flex flex-wrap justify-center lg:justify-start items-center gap-3 sm:gap-6 text-xs sm:text-sm text-slate-600 transition-all duration-700 ease-out delay-700 w-full px-2 sm:px-0 ${
                   isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
@@ -324,7 +324,7 @@ export default function LandingPage() {
             </div>
 
             {/* Right Column - Enhanced Visual Elements */}
-            <div className="relative">
+            <div className="relative mt-8 lg:mt-0">
               <div
                 className={`transition-all duration-1000 ease-out delay-300 ${
                   isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
