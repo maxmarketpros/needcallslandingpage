@@ -136,10 +136,11 @@ export default function LandingPage() {
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/40 via-cyan-600/40 to-blue-700/40 rounded-2xl blur opacity-50 group-hover:opacity-70 transition duration-300"></div>
                 <Button
+                  asChild
                   className="relative bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-700 hover:from-blue-700 hover:via-cyan-700 hover:to-blue-800 text-white px-10 py-5 font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-xl overflow-hidden"
-                  onClick={() => window.open("tel:(949) 603-0389")}
                   style={{fontFamily: '"Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'}}
                 >
+                  <a href="tel:(949) 603-0389">
                   <div className="flex items-center gap-4">
                     <div className="relative">
                       <Phone className="h-6 w-6 group-hover:animate-bounce" />
@@ -149,6 +150,7 @@ export default function LandingPage() {
                     <span className="font-mono font-bold text-xl text-white">(949) 603-0389</span>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </a>
                 </Button>
               </div>
             </div>
@@ -271,11 +273,12 @@ export default function LandingPage() {
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
                   <Button
+                    asChild
                     size="lg"
                     className="relative group bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-6 sm:px-10 py-3 sm:py-5 text-lg sm:text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 hover:-translate-y-2 active:scale-95 w-full sm:w-auto"
-                    onClick={() => window.open("tel:(949) 603-0389")}
                     style={{fontFamily: '"Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'}}
                   >
+                    <a href="tel:(949) 603-0389">
                     <div className="flex items-center justify-center gap-2 sm:gap-3">
                       <div className="relative">
                         <Phone className="h-5 w-5 sm:h-7 sm:w-7 group-hover:animate-bounce" />
@@ -284,6 +287,7 @@ export default function LandingPage() {
                       <span className="font-bold">Call (949) 603-0389</span>
                     </div>
                     <div className="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </a>
                   </Button>
                 </div>
 
@@ -821,13 +825,15 @@ export default function LandingPage() {
               </Button>
               
               <Button
+                asChild
                 variant="ghost"
                 size="lg"
                 className="border-2 border-violet-300/50 text-violet-700 hover:bg-violet-50 px-7 py-3 text-base font-bold rounded-xl hover:scale-105 transition-all duration-300"
-                onClick={() => window.open("tel:(949) 603-0389")}
               >
+                <a href="tel:(949) 603-0389">
                 <Phone className="mr-2 h-4 w-4" />
                 <span className="font-bold">Call (949) 603-0389</span>
+                </a>
               </Button>
             </div>
           </div>
@@ -1085,12 +1091,14 @@ export default function LandingPage() {
             </div>
             
             <Button
+              asChild
               size="lg"
               className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-700 hover:to-violet-700 text-white px-8 py-3 text-base font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
-              onClick={() => window.open("tel:(949) 603-0389")}
             >
+              <a href="tel:(949) 603-0389">
               <Phone className="mr-2 h-4 w-4" />
               Call (949) 603-0389
+              </a>
             </Button>
           </div>
         </div>
@@ -1433,16 +1441,17 @@ export default function LandingPage() {
               </div>
               
               <Button
-                type="button"
+                asChild
                 size="lg"
-                onClick={() => window.open("tel:(949) 603-0389")}
                 className="relative group bg-white/90 backdrop-blur-sm border-2 border-blue-300/50 text-blue-700 hover:bg-blue-600 hover:text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
               >
+                <a href="tel:(949) 603-0389">
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                   <span>Call Now (949) 603-0389</span>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-violet-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
               </Button>
             </div>
           </div>
@@ -1464,11 +1473,13 @@ export default function LandingPage() {
       <div className={`fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 md:hidden z-50 transition-transform duration-300 ${showStickyButtons ? 'translate-y-0' : 'translate-y-full'}`}>
         <div className="flex gap-3 justify-center max-w-md mx-auto">
           <Button
+            asChild
             className="flex-1 bg-cobalt hover:bg-electric-blue text-white font-semibold py-3 rounded-lg hover:scale-105 transition-all duration-300 active:scale-95"
-            onClick={() => window.open("tel:(949) 603-0389")}
           >
+            <a href="tel:(949) 603-0389">
             <Phone className="mr-2 h-4 w-4" />
             Call Now
+            </a>
           </Button>
           <Button
             className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg hover:scale-105 transition-all duration-300 active:scale-95"
