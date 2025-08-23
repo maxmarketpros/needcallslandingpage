@@ -84,7 +84,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Enhanced Navigation */}
-      <nav className="sticky top-0 z-50 bg-white backdrop-blur-sm border-b border-gray-100 shadow-lg">
+      <nav className="relative sm:sticky top-0 z-50 bg-white backdrop-blur-sm border-b border-gray-100 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24">
             {/* Enhanced Logo Area */}
@@ -225,7 +225,7 @@ export default function LandingPage() {
                   <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/5 to-violet-600/5 blur-xl -z-10 rounded-lg"></div>
                 </div>
                 <div
-                  className={`text-xl sm:text-2xl md:text-2xl lg:text-3xl text-blue-600 font-bold mt-3 sm:mt-4 transition-all duration-700 ease-out delay-300 ${
+                  className={`hidden sm:block text-xl sm:text-2xl md:text-2xl lg:text-3xl text-blue-600 font-bold mt-3 sm:mt-4 transition-all duration-700 ease-out delay-300 ${
                     isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                 >
@@ -245,7 +245,7 @@ export default function LandingPage() {
                 </p>
                 
                 {/* Benefit highlights */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-8 px-2 sm:px-0">
+                <div className="hidden sm:grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-8 px-2 sm:px-0">
                   <div className="flex items-center gap-2 text-slate-700">
                     <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full animate-pulse"></div>
                     <span className="font-semibold text-sm">More Calls</span>
