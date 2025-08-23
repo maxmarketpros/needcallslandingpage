@@ -156,16 +156,11 @@ export default function LandingPage() {
                 <Button
                   asChild
                   className="relative bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-700 hover:from-blue-700 hover:via-cyan-700 hover:to-blue-800 text-white px-10 py-5 font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-xl overflow-hidden"
-                  style={{fontFamily: '"Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'}}
                 >
                   <a href="tel:(949) 603-0389">
-                  <div className="flex items-center gap-4">
-                    <div className="relative">
-                      <Phone className="h-6 w-6 group-hover:animate-bounce" />
-                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
-                    </div>
-                    <span className="hidden sm:inline font-semibold text-white">Call Now </span>
-                    <span className="font-mono font-bold text-xl text-white">(949) 603-0389</span>
+                  <div className="flex items-center gap-3">
+                    <Phone className="h-6 w-6" />
+                    <span className="font-semibold text-white text-xl">Call Now</span>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </a>

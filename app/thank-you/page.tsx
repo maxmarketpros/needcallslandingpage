@@ -55,7 +55,7 @@ export default function ThankYouPage() {
               >
                 <a href="tel:(949) 603-0389">
                 <Phone className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                <span className="hidden sm:inline">Call Now </span>(949) 603-0389
+                <span>Call Now</span>
                 </a>
               </Button>
             </div>
