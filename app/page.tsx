@@ -23,6 +23,7 @@ export default function LandingPage() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
   const [showStickyButtons, setShowStickyButtons] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
     setIsLoaded(true)
@@ -43,6 +44,34 @@ export default function LandingPage() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    // Get form data
+    const formData = new FormData(e.currentTarget)
+    
+    // Try to submit to Netlify if available, otherwise just redirect
+    if (typeof window !== 'undefined' && window.location.hostname.includes('netlify')) {
+      // Submit to Netlify forms
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString()
+      }).then(() => {
+        window.location.href = '/thank-you'
+      }).catch(() => {
+        // Fallback if Netlify form fails
+        window.location.href = '/thank-you'
+      })
+    } else {
+      // For non-Netlify deployments, just redirect to thank you page
+      setTimeout(() => {
+        window.location.href = '/thank-you'
+      }, 1000)
+    }
+  }
 
   const testimonials = [
     {
@@ -1327,7 +1356,7 @@ export default function LandingPage() {
                 <p className="text-slate-600">Takes less than 2 minutes • No commitment required</p>
               </div>
 
-              <form name="contact" method="POST" data-netlify="true" action="/thank-you" className="relative space-y-6 w-full">
+              <form name="contact" method="POST" data-netlify="true" onSubmit={handleFormSubmit} className="relative space-y-6 w-full">
                 <input type="hidden" name="form-name" value="contact" />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
@@ -1396,16 +1425,21 @@ export default function LandingPage() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="relative group w-full bg-gradient-to-r from-blue-600 via-violet-600 to-purple-600 hover:from-blue-700 hover:via-violet-700 hover:to-purple-700 text-white py-6 text-xl font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.02] hover:-translate-y-2 active:scale-95 overflow-hidden"
+                    disabled={isSubmitting}
+                    className="relative group w-full bg-gradient-to-r from-blue-600 via-violet-600 to-purple-600 hover:from-blue-700 hover:via-violet-700 hover:to-purple-700 disabled:from-slate-400 disabled:via-slate-500 disabled:to-slate-600 disabled:cursor-not-allowed text-white py-6 text-xl font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.02] hover:-translate-y-2 active:scale-95 disabled:scale-100 disabled:translate-y-0 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative flex items-center justify-center gap-3">
                       <div className="relative">
-                        <Phone className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
-                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
+                        <Phone className={`h-6 w-6 transition-transform duration-300 ${isSubmitting ? 'animate-pulse' : 'group-hover:scale-110'}`} />
+                        {!isSubmitting && <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>}
                       </div>
-                      <span className="hidden sm:inline">Schedule My Free Strategy Call</span>
-                      <span className="sm:hidden">Get Free Strategy Call</span>
+                      <span className="hidden sm:inline">
+                        {isSubmitting ? 'Submitting...' : 'Schedule My Free Strategy Call'}
+                      </span>
+                      <span className="sm:hidden">
+                        {isSubmitting ? 'Submitting...' : 'Get Free Strategy Call'}
+                      </span>
                     </div>
                   </Button>
                 </div>

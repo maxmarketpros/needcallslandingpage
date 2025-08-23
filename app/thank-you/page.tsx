@@ -16,6 +16,13 @@ export default function ThankYouPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/40 to-indigo-50/20">
+      {/* Hidden form for Netlify forms detection */}
+      <form name="contact" data-netlify="true" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <input type="text" name="business" />
+      </form>
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white backdrop-blur-sm border-b border-gray-100 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
