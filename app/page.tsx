@@ -160,7 +160,7 @@ export default function LandingPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Main Content */}
-            <div className="relative z-10 text-center lg:text-left px-4">
+            <div className="relative z-10 text-center lg:text-left px-4 flex flex-col items-center lg:items-start">
               {/* Enhanced trust indicator badge */}
               <div
                 className={`inline-flex items-center gap-3 bg-gradient-to-r from-white/90 to-blue-50/90 backdrop-blur-md border border-blue-200/50 text-blue-800 px-6 py-3 rounded-full text-sm font-bold mb-8 shadow-2xl transition-all duration-700 ease-out hover:scale-105 hover:shadow-xl group ${
@@ -246,7 +246,7 @@ export default function LandingPage() {
 
               {/* Enhanced CTAs with better design and clearance */}
               <div
-                className={`relative z-20 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start items-center mb-10 p-4 transition-all duration-700 ease-out delay-500 ${
+                className={`relative z-20 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start items-center mb-10 p-4 transition-all duration-700 ease-out delay-500 w-full ${
                   isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
@@ -304,7 +304,7 @@ export default function LandingPage() {
 
               {/* Trust indicators row */}
               <div
-                className={`flex flex-wrap justify-center lg:justify-start items-center gap-6 text-sm text-slate-600 transition-all duration-700 ease-out delay-700 ${
+                className={`flex flex-wrap justify-center lg:justify-start items-center gap-6 text-sm text-slate-600 transition-all duration-700 ease-out delay-700 w-full ${
                   isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
@@ -579,7 +579,7 @@ export default function LandingPage() {
           </div>
 
           {/* Enhanced service cards */}
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 justify-items-center">
             
             {/* Website Development Card */}
             <div className="group relative">
@@ -793,7 +793,7 @@ export default function LandingPage() {
               <span>Ready to see results? Let's talk strategy.</span>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 via-violet-600 to-purple-600 hover:from-blue-700 hover:via-violet-700 hover:to-purple-700 text-white px-7 py-3 text-base font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
@@ -863,7 +863,7 @@ export default function LandingPage() {
             <p className="text-slate-600 max-w-2xl mx-auto">Enterprise-level technology stack driving results for our clients</p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
             <div className="group relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 border border-blue-100/50">
@@ -950,9 +950,9 @@ export default function LandingPage() {
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">Get answers to common questions about our services and process.</p>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-6 flex flex-col items-center">
             {/* FAQ Item 1 */}
-            <div className="group relative">
+            <div className="group relative w-full max-w-4xl">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
               <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.01] border border-blue-100/50">
                 <div className="flex items-start gap-4">
@@ -979,7 +979,7 @@ export default function LandingPage() {
             </div>
 
             {/* FAQ Item 2 */}
-            <div className="group relative">
+            <div className="group relative w-full max-w-4xl">
               <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
               <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.01] border border-emerald-100/50">
                 <div className="flex items-start gap-4">
@@ -1006,7 +1006,7 @@ export default function LandingPage() {
             </div>
 
             {/* FAQ Item 3 */}
-            <div className="group relative">
+            <div className="group relative w-full max-w-4xl">
               <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-purple-500 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
               <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.01] border border-violet-100/50">
                 <div className="flex items-start gap-4">
@@ -1033,7 +1033,7 @@ export default function LandingPage() {
             </div>
 
             {/* FAQ Item 4 */}
-            <div className="group relative">
+            <div className="group relative w-full max-w-4xl">
               <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
               <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.01] border border-amber-100/50">
                 <div className="flex items-start gap-4">
@@ -1302,10 +1302,10 @@ export default function LandingPage() {
                 <p className="text-slate-600">Takes less than 2 minutes • No commitment required</p>
               </div>
 
-              <form name="contact" method="POST" data-netlify="true" action="/thank-you" className="relative space-y-6">
+              <form name="contact" method="POST" data-netlify="true" action="/thank-you" className="relative space-y-6 w-full">
                 <input type="hidden" name="form-name" value="contact" />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                   <div className="space-y-3">
                     <label htmlFor="name" className="text-sm font-bold text-slate-700 block flex items-center gap-2">
                       <Users className="h-4 w-4 text-blue-600" />
@@ -1336,7 +1336,7 @@ export default function LandingPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                   <div className="space-y-3">
                     <label htmlFor="phone" className="text-sm font-bold text-slate-700 block flex items-center gap-2">
                       <Phone className="h-4 w-4 text-blue-600" />
@@ -1445,7 +1445,7 @@ export default function LandingPage() {
 
       {/* Sticky Mobile Footer */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 md:hidden z-50">
-        <div className="flex gap-3">
+        <div className="flex gap-3 justify-center max-w-md mx-auto">
           <Button
             className="flex-1 bg-cobalt hover:bg-electric-blue text-white font-semibold py-3 rounded-lg hover:scale-105 transition-all duration-300 active:scale-95"
             onClick={() => window.open("tel:(949) 603-0389")}
