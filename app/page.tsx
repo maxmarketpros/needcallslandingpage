@@ -46,31 +46,9 @@ export default function LandingPage() {
   }, [])
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
     setIsSubmitting(true)
-    
-    // Get form data
-    const formData = new FormData(e.currentTarget)
-    
-    // Try to submit to Netlify if available, otherwise just redirect
-    if (typeof window !== 'undefined' && window.location.hostname.includes('netlify')) {
-      // Submit to Netlify forms
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString()
-      }).then(() => {
-        window.location.href = '/thank-you'
-      }).catch(() => {
-        // Fallback if Netlify form fails
-        window.location.href = '/thank-you'
-      })
-    } else {
-      // For non-Netlify deployments, just redirect to thank you page
-      setTimeout(() => {
-        window.location.href = '/thank-you'
-      }, 1000)
-    }
+    // Let the browser handle the natural form submission to Netlify
+    // Don't preventDefault() - this allows Netlify to process the form
   }
 
   const testimonials = [
@@ -1356,8 +1334,11 @@ export default function LandingPage() {
                 <p className="text-slate-600">Takes less than 2 minutes • No commitment required</p>
               </div>
 
-              <form name="contact" method="POST" data-netlify="true" onSubmit={handleFormSubmit} className="relative space-y-6 w-full">
+              <form name="contact" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleFormSubmit} className="relative space-y-6 w-full">
                 <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                   <div className="space-y-3">
