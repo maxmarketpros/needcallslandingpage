@@ -60,43 +60,80 @@ export default function LandingPage() {
     document.getElementById("faq")?.scrollIntoView({ behavior: "smooth" })
   }
 
+  const scrollToTestimonials = () => {
+    document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      {/* Enhanced Navigation */}
+      <nav className="sticky top-0 z-50 bg-white backdrop-blur-sm border-b border-gray-100 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-24">
+            {/* Enhanced Logo Area */}
             <div className="flex items-center justify-center md:justify-start flex-1 md:flex-initial">
-              <img
-                src="https://cdn.prod.website-files.com/652e046ee9c85f183036c31a/652e2e2c89305f4451c2ec4f_5ee1da5b1fc1382e14c51e0f_Logo-p-1080%20(1)-p-500.png"
-                alt="MaxMarketPros Logo"
-                className="h-12 w-auto"
-              />
+              <div className="relative group">
+                <img
+                  src="https://cdn.prod.website-files.com/652e046ee9c85f183036c31a/652e2e2c89305f4451c2ec4f_5ee1da5b1fc1382e14c51e0f_Logo-p-1080%20(1)-p-500.png"
+                  alt="MaxMarketPros Logo"
+                  className="h-16 w-auto group-hover:scale-105 transition-all duration-300"
+                />
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              </div>
             </div>
 
-            <div className="hidden md:flex items-center gap-2 sm:gap-4">
-              <Button
-                variant="ghost"
-                onClick={scrollToFAQ}
-                className="text-gray-700 hover:text-blue-600 font-medium hover:bg-blue-50 transition-all duration-300 text-sm sm:text-base px-2 sm:px-4 rounded-full"
-              >
-                FAQ
-              </Button>
-              <Button
-                variant="ghost"
-                onClick={scrollToForm}
-                className="text-white bg-blue-600 hover:bg-blue-700 rounded-full px-3 sm:px-6 py-2 transition-all duration-300 font-medium hover:scale-105 hover:shadow-lg text-sm sm:text-base"
-              >
-                Talk to an Expert
-              </Button>
-              <Button
-                size="sm"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-2 sm:px-4 py-2 font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 text-xs sm:text-sm"
-                onClick={() => window.open("tel:(949) 603-0389")}
-              >
-                <Phone className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                <span className="hidden sm:inline">Call Now </span>(949) 603-0389
-              </Button>
+            {/* Enhanced Navigation Items */}
+            <div className="hidden md:flex items-center gap-6 sm:gap-8">
+              {/* FAQ Button */}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
+                <Button
+                  variant="ghost"
+                  onClick={scrollToFAQ}
+                  className="relative bg-white border border-blue-200/50 text-slate-700 hover:text-blue-700 hover:bg-blue-50 font-semibold transition-all duration-300 text-xl px-10 py-5 rounded-xl shadow-md hover:shadow-lg hover:scale-105 hover:-translate-y-0.5"
+                  style={{fontFamily: '"Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'}}
+                >
+                  <span className="relative z-10 font-semibold text-slate-700 group-hover:text-blue-700 transition-colors duration-300">FAQ</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-violet-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Button>
+              </div>
+
+              {/* Talk to Expert Button */}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-violet-500/30 to-purple-500/30 rounded-2xl blur opacity-50 group-hover:opacity-70 transition duration-300"></div>
+                <Button
+                  variant="ghost"
+                  onClick={scrollToForm}
+                  className="relative bg-gradient-to-r from-violet-600 via-purple-600 to-violet-700 hover:from-violet-700 hover:via-purple-700 hover:to-violet-800 text-white font-semibold rounded-xl px-10 py-5 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:-translate-y-1 text-xl shadow-xl"
+                  style={{fontFamily: '"Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'}}
+                >
+                  <div className="flex items-center gap-3">
+                    <TrendingUp className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                    <span className="font-semibold text-white">Talk to an Expert</span>
+                  </div>
+                  <div className="absolute inset-0 bg-white/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Button>
+              </div>
+
+              {/* Call Now Button */}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/40 via-cyan-600/40 to-blue-700/40 rounded-2xl blur opacity-50 group-hover:opacity-70 transition duration-300"></div>
+                <Button
+                  className="relative bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-700 hover:from-blue-700 hover:via-cyan-700 hover:to-blue-800 text-white px-10 py-5 font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-xl overflow-hidden"
+                  onClick={() => window.open("tel:(949) 603-0389")}
+                  style={{fontFamily: '"Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'}}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="relative">
+                      <Phone className="h-6 w-6 group-hover:animate-bounce" />
+                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
+                    </div>
+                    <span className="hidden sm:inline font-semibold text-white">Call Now </span>
+                    <span className="font-mono font-bold text-xl text-white">(949) 603-0389</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -218,15 +255,16 @@ export default function LandingPage() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
                   <Button
                     size="lg"
-                    className="relative group bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-10 py-5 text-xl font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 hover:-translate-y-2 active:scale-95"
+                    className="relative group bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-10 py-5 text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 hover:-translate-y-2 active:scale-95"
                     onClick={() => window.open("tel:(949) 603-0389")}
+                    style={{fontFamily: '"Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'}}
                   >
                     <div className="flex items-center gap-3">
                       <div className="relative">
                         <Phone className="h-7 w-7 group-hover:animate-bounce" />
                         <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
                       </div>
-                      <span>Call (949) 603-0389</span>
+                      <span className="font-bold">Call (949) 603-0389</span>
                     </div>
                     <div className="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Button>
@@ -239,11 +277,12 @@ export default function LandingPage() {
                   <Button
                     size="lg"
                     onClick={scrollToForm}
-                    className="relative z-30 bg-white/95 backdrop-blur-sm border-2 border-blue-600/50 text-blue-700 hover:bg-blue-600 hover:text-white px-10 py-5 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 group"
+                    className="relative z-30 bg-white/95 backdrop-blur-sm border-2 border-blue-600/50 text-blue-700 hover:bg-blue-600 hover:text-white px-10 py-5 text-lg font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 group"
+                    style={{fontFamily: '"Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'}}
                   >
                     <div className="flex items-center gap-3">
                       <TrendingUp className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
-                      <span>Get Free Strategy Call</span>
+                      <span className="font-semibold">Get Free Strategy Call</span>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-violet-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Button>
@@ -453,13 +492,7 @@ export default function LandingPage() {
             </div>
 
             {/* Reviews - Compact Banner Style */}
-            <div className="group cursor-pointer"
-                onClick={() =>
-                  window.open(
-                    "https://www.google.com/search?q=maxmarketpros&oq=maxmarketpros+&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgYIAhAAGB4yBggDEEUYQTIGCAQQRRhBMgYIBRBFGDwyBggGEEUYPTIGCAcQRRg80gEIMjUyMWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#",
-                    "_blank",
-                  )
-                 }>
+            <div className="group cursor-pointer" onClick={scrollToTestimonials}>
               <div className="flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-violet-200/40 rounded-xl px-5 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group min-w-[220px]">
                 <div className="relative flex-shrink-0">
                   <div className="w-10 h-10 bg-gradient-to-r from-violet-500 to-purple-600 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
@@ -773,11 +806,11 @@ export default function LandingPage() {
               <Button
                 variant="ghost"
                 size="lg"
-                className="border-2 border-violet-300/50 text-violet-700 hover:bg-violet-50 px-7 py-3 text-base font-semibold rounded-xl hover:scale-105 transition-all duration-300"
+                className="border-2 border-violet-300/50 text-violet-700 hover:bg-violet-50 px-7 py-3 text-base font-bold rounded-xl hover:scale-105 transition-all duration-300"
                 onClick={() => window.open("tel:(949) 603-0389")}
               >
                 <Phone className="mr-2 h-4 w-4" />
-                Call (949) 603-0389
+                <span className="font-bold">Call (949) 603-0389</span>
               </Button>
             </div>
           </div>
@@ -1047,7 +1080,7 @@ export default function LandingPage() {
       </section>
 
       {/* Enhanced Testimonials Section */}
-      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/40 to-violet-50/30">
+      <section id="testimonials" className="relative py-24 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/40 to-violet-50/30">
         {/* Advanced background effects */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.08),transparent_60%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(139,92,246,0.06),transparent_60%)]"></div>
