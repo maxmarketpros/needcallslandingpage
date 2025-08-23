@@ -22,9 +22,26 @@ import {
 export default function LandingPage() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [showStickyButtons, setShowStickyButtons] = useState(false)
 
   useEffect(() => {
     setIsLoaded(true)
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.querySelector('section')
+      if (heroSection) {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight
+        const scrollPosition = window.scrollY + window.innerHeight
+        
+        // Show sticky buttons when user scrolls past the hero section
+        setShowStickyButtons(scrollPosition > heroBottom)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const testimonials = [
@@ -139,7 +156,7 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/40 to-indigo-50/20 pt-16 pb-16 sm:pt-20 sm:pb-20 md:pt-32 md:pb-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/40 to-indigo-50/20 pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-20 md:pb-32">
         {/* Sophisticated background elements */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.08),transparent_60%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.06),transparent_60%)]"></div>
@@ -158,12 +175,12 @@ export default function LandingPage() {
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-32 bg-gradient-to-t from-white/80 to-transparent"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column - Main Content */}
             <div className="relative z-10 text-center lg:text-left px-2 sm:px-4 flex flex-col items-center lg:items-start max-w-full">
               {/* Enhanced trust indicator badge */}
               <div
-                className={`inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-white/90 to-blue-50/90 backdrop-blur-md border border-blue-200/50 text-blue-800 px-3 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-2xl transition-all duration-700 ease-out hover:scale-105 hover:shadow-xl group max-w-full ${
+                className={`inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-white/90 to-blue-50/90 backdrop-blur-md border border-blue-200/50 text-blue-800 px-3 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6 shadow-2xl transition-all duration-700 ease-out hover:scale-105 hover:shadow-xl group max-w-full ${
                   isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
@@ -185,7 +202,7 @@ export default function LandingPage() {
               {/* Enhanced headline with better hierarchy */}
               <h1 className="font-black mb-6 sm:mb-8 leading-tight max-w-full">
                 <div
-                  className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-slate-900 transition-all duration-700 ease-out hover:scale-105 transform-gpu ${
+                  className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-slate-900 transition-all duration-700 ease-out hover:scale-105 transform-gpu ${
                     isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{
@@ -196,7 +213,7 @@ export default function LandingPage() {
                   Your Phone Should Be
                 </div>
                 <div
-                  className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-600 bg-clip-text text-transparent transition-all duration-700 ease-out delay-150 hover:scale-105 transform-gpu relative ${
+                  className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-600 bg-clip-text text-transparent transition-all duration-700 ease-out delay-150 hover:scale-105 transform-gpu relative ${
                     isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{
@@ -208,7 +225,7 @@ export default function LandingPage() {
                   <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/5 to-violet-600/5 blur-xl -z-10 rounded-lg"></div>
                 </div>
                 <div
-                  className={`text-base sm:text-lg md:text-xl lg:text-2xl text-blue-600 font-bold mt-3 sm:mt-4 transition-all duration-700 ease-out delay-300 ${
+                  className={`text-lg sm:text-xl md:text-2xl lg:text-3xl text-blue-600 font-bold mt-3 sm:mt-4 transition-all duration-700 ease-out delay-300 ${
                     isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                 >
@@ -1444,7 +1461,7 @@ export default function LandingPage() {
       </footer>
 
       {/* Sticky Mobile Footer */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 md:hidden z-50">
+      <div className={`fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 md:hidden z-50 transition-transform duration-300 ${showStickyButtons ? 'translate-y-0' : 'translate-y-full'}`}>
         <div className="flex gap-3 justify-center max-w-md mx-auto">
           <Button
             className="flex-1 bg-cobalt hover:bg-electric-blue text-white font-semibold py-3 rounded-lg hover:scale-105 transition-all duration-300 active:scale-95"
