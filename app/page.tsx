@@ -180,29 +180,29 @@ export default function LandingPage() {
             <div className="relative z-10 text-center lg:text-left px-2 sm:px-4 flex flex-col items-center lg:items-start max-w-full">
               {/* Enhanced trust indicator badge */}
               <div
-                className={`inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-white/90 to-blue-50/90 backdrop-blur-md border border-blue-200/50 text-blue-800 px-3 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6 shadow-2xl transition-all duration-700 ease-out hover:scale-105 hover:shadow-xl group max-w-full ${
+                className={`inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 bg-gradient-to-r from-white/90 to-blue-50/90 backdrop-blur-md border border-blue-200/50 text-blue-800 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-bold mb-3 sm:mb-4 shadow-2xl transition-all duration-700 ease-out hover:scale-105 hover:shadow-xl group max-w-full ${
                   isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
                 <div className="relative">
-                  <Award className="h-5 w-5 text-blue-600 group-hover:rotate-12 transition-transform duration-300" />
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <Award className="h-4 w-4 text-blue-600 group-hover:rotate-12 transition-transform duration-300" />
+                  <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 </div>
                 <span className="bg-gradient-to-r from-blue-800 to-violet-700 bg-clip-text text-transparent">
                   Trusted by 900+ Local Businesses
                 </span>
-                <div className="flex ml-1 gap-0.5">
+                <div className="flex ml-0.5 gap-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-amber-400 fill-current drop-shadow-sm" />
+                    <Star key={i} className="h-3 w-3 text-amber-400 fill-current drop-shadow-sm" />
                   ))}
                 </div>
-                <span className="text-xs text-blue-600 font-medium">4.9/5</span>
+                <span className="text-xs text-blue-600 font-bold">4.9/5</span>
               </div>
 
               {/* Enhanced headline with better hierarchy */}
               <h1 className="font-black mb-6 sm:mb-8 leading-tight max-w-full">
                 <div
-                  className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-slate-900 transition-all duration-700 ease-out hover:scale-105 transform-gpu ${
+                  className={`text-5xl sm:text-6xl md:text-6xl lg:text-7xl text-slate-900 transition-all duration-700 ease-out hover:scale-105 transform-gpu ${
                     isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{
@@ -213,7 +213,7 @@ export default function LandingPage() {
                   Your Phone Should Be
                 </div>
                 <div
-                  className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-600 bg-clip-text text-transparent transition-all duration-700 ease-out delay-150 hover:scale-105 transform-gpu relative ${
+                  className={`text-5xl sm:text-6xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-600 bg-clip-text text-transparent transition-all duration-700 ease-out delay-150 hover:scale-105 transform-gpu relative ${
                     isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{
@@ -225,7 +225,7 @@ export default function LandingPage() {
                   <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/5 to-violet-600/5 blur-xl -z-10 rounded-lg"></div>
                 </div>
                 <div
-                  className={`text-lg sm:text-xl md:text-2xl lg:text-3xl text-blue-600 font-bold mt-3 sm:mt-4 transition-all duration-700 ease-out delay-300 ${
+                  className={`text-xl sm:text-2xl md:text-2xl lg:text-3xl text-blue-600 font-bold mt-3 sm:mt-4 transition-all duration-700 ease-out delay-300 ${
                     isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                 >
