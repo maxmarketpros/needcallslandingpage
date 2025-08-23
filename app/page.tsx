@@ -6,6 +6,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { useIsMobile } from "@/components/ui/use-mobile"
 import {
   Phone,
   Star,
@@ -24,6 +25,7 @@ export default function LandingPage() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [showStickyButtons, setShowStickyButtons] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     setIsLoaded(true)
@@ -80,6 +82,16 @@ export default function LandingPage() {
     document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })
   }
 
+  const handleStrategyCall = () => {
+    if (isMobile) {
+      // On mobile, redirect directly to the form section
+      window.location.href = "#lead-form"
+    } else {
+      // On desktop, smooth scroll to form
+      scrollToForm()
+    }
+  }
+
   const scrollToFAQ = () => {
     document.getElementById("faq")?.scrollIntoView({ behavior: "smooth" })
   }
@@ -127,9 +139,8 @@ export default function LandingPage() {
                 <div className="absolute -inset-1 bg-gradient-to-r from-violet-500/30 to-purple-500/30 rounded-2xl blur opacity-50 group-hover:opacity-70 transition duration-300"></div>
                 <Button
                   variant="ghost"
-                  onClick={scrollToForm}
+                  onClick={handleStrategyCall}
                   className="relative bg-gradient-to-r from-violet-600 via-purple-600 to-violet-700 hover:from-violet-700 hover:via-purple-700 hover:to-violet-800 text-white font-semibold rounded-xl px-10 py-5 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:-translate-y-1 text-xl shadow-xl"
-                  style={{fontFamily: '"Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'}}
                 >
                   <div className="flex items-center gap-3">
                     <TrendingUp className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
@@ -283,7 +294,7 @@ export default function LandingPage() {
                     asChild
                     size="lg"
                     className="relative group bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-6 sm:px-10 py-3 sm:py-5 text-lg sm:text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 hover:-translate-y-2 active:scale-95 w-full sm:w-auto"
-                    style={{fontFamily: '"Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'}}
+
                   >
                     <a href="tel:(949) 603-0389">
                     <div className="flex items-center justify-center gap-2 sm:gap-3">
@@ -304,9 +315,9 @@ export default function LandingPage() {
                   <div className="absolute -inset-4 bg-white/50 rounded-3xl -z-10"></div>
                   <Button
                     size="lg"
-                    onClick={scrollToForm}
+                    onClick={handleStrategyCall}
                     className="relative z-30 bg-white/95 backdrop-blur-sm border-2 border-blue-600/50 text-blue-700 hover:bg-blue-600 hover:text-white px-6 sm:px-10 py-3 sm:py-5 text-base sm:text-lg font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 group w-full sm:w-auto"
-                    style={{fontFamily: '"Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'}}
+
                   >
                     <div className="flex items-center justify-center gap-2 sm:gap-3">
                       <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6 group-hover:scale-110 transition-transform duration-300" />
@@ -825,7 +836,7 @@ export default function LandingPage() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 via-violet-600 to-purple-600 hover:from-blue-700 hover:via-violet-700 hover:to-purple-700 text-white px-7 py-3 text-base font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
-                onClick={scrollToForm}
+                onClick={handleStrategyCall}
               >
                 <TrendingUp className="mr-2 h-4 w-4" />
                 Get Your Free Strategy Call
@@ -1498,7 +1509,7 @@ export default function LandingPage() {
           </Button>
           <Button
             className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg hover:scale-105 transition-all duration-300 active:scale-95"
-            onClick={scrollToForm}
+            onClick={handleStrategyCall}
           >
             Talk to an Expert
           </Button>
