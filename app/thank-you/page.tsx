@@ -2,9 +2,10 @@
 
 import type React from "react"
 
-// Declare global gtag function
+// Declare global gtag functions
 declare global {
   function gtag_report_conversion(url?: string): boolean;
+  function gtag(command: string, targetId: string, config?: any): void;
 }
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -20,8 +21,8 @@ export default function ThankYouPage() {
   useEffect(() => {
     setIsLoaded(true)
     // Track form submission conversion when user reaches thank you page
-    if (typeof gtag_report_conversion !== 'undefined') {
-      gtag_report_conversion()
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', {'send_to': 'AW-17503097114/FnDVCOmRyo0bEJqikJpB'})
     }
   }, [])
 
