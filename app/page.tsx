@@ -108,16 +108,7 @@ export default function LandingPage() {
     document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" })
   }
 
-  const handlePhoneClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    if (typeof gtag_report_conversion !== 'undefined') {
-      gtag_report_conversion('tel:(949) 603-0389')
-    }
-    // Small delay to ensure conversion is tracked before redirect
-    setTimeout(() => {
-      window.location.href = 'tel:(949) 603-0389'
-    }, 100)
-  }
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -176,7 +167,7 @@ export default function LandingPage() {
                 asChild
                 className="relative bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-700 hover:from-blue-700 hover:via-cyan-700 hover:to-blue-800 text-white px-10 py-5 font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-xl overflow-hidden"
               >
-                <a href="tel:(949) 603-0389" onClick={handlePhoneClick}>
+                <a href="tel:+19496030389" onClick={() => { return gtag_report_conversion('tel:+19496030389') }}>
                   <div className="flex items-center gap-3">
                     <Phone className="h-6 w-6" />
                     <span className="font-semibold text-white text-xl">Call Now</span>
@@ -310,7 +301,7 @@ export default function LandingPage() {
                     className="relative group bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-6 sm:px-10 py-3 sm:py-5 text-lg sm:text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 hover:-translate-y-2 active:scale-95 w-full sm:w-auto"
 
                   >
-                    <a href="tel:(949) 603-0389" onClick={handlePhoneClick}>
+                    <a href="tel:+19496030389" onClick={() => { return gtag_report_conversion('tel:+19496030389') }}>
                     <div className="flex items-center justify-center gap-2 sm:gap-3">
                       <div className="relative">
                         <Phone className="h-5 w-5 sm:h-7 sm:w-7 group-hover:animate-bounce" />
@@ -862,7 +853,7 @@ export default function LandingPage() {
                 size="lg"
                 className="border-2 border-violet-300/50 text-violet-700 hover:bg-violet-50 px-7 py-3 text-base font-bold rounded-xl hover:scale-105 transition-all duration-300"
               >
-                <a href="tel:(949) 603-0389" onClick={handlePhoneClick}>
+                <a href="tel:+19496030389" onClick={() => { return gtag_report_conversion('tel:+19496030389') }}>
                 <Phone className="mr-2 h-4 w-4" />
                 <span className="font-bold">Call (949) 603-0389</span>
                 </a>
@@ -1127,7 +1118,7 @@ export default function LandingPage() {
               size="lg"
               className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-700 hover:to-violet-700 text-white px-8 py-3 text-base font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
             >
-              <a href="tel:(949) 603-0389" onClick={handlePhoneClick}>
+              <a href="tel:+19496030389" onClick={() => { return gtag_report_conversion('tel:+19496030389') }}>
               <Phone className="mr-2 h-4 w-4" />
               Call (949) 603-0389
               </a>
@@ -1485,7 +1476,7 @@ export default function LandingPage() {
                 size="lg"
                 className="relative group bg-white/90 backdrop-blur-sm border-2 border-blue-300/50 text-blue-700 hover:bg-blue-600 hover:text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
               >
-                <a href="tel:(949) 603-0389" onClick={handlePhoneClick}>
+                <a href="tel:+19496030389" onClick={() => { return gtag_report_conversion('tel:+19496030389') }}>
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                   <span>Call Now (949) 603-0389</span>
@@ -1516,7 +1507,7 @@ export default function LandingPage() {
             asChild
             className="flex-1 bg-cobalt hover:bg-electric-blue text-white font-semibold py-3 rounded-lg hover:scale-105 transition-all duration-300 active:scale-95"
           >
-            <a href="tel:(949) 603-0389" onClick={handlePhoneClick}>
+            <a href="tel:+19496030389" onClick={() => { return gtag_report_conversion('tel:+19496030389') }}>
             <Phone className="mr-2 h-4 w-4" />
             Call Now
             </a>
