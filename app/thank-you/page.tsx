@@ -1,6 +1,11 @@
 "use client"
 
 import type React from "react"
+
+// Declare global gtag function
+declare global {
+  function gtag_report_conversion(url?: string): boolean;
+}
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -53,7 +58,7 @@ export default function ThankYouPage() {
                 size="sm"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-2 sm:px-4 py-2 font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 text-xs sm:text-sm"
               >
-                <a href="tel:(949) 603-0389">
+                <a href="tel:(949) 603-0389" onClick={() => gtag_report_conversion()}>
                 <Phone className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                 <span>Call Now</span>
                 </a>
@@ -180,7 +185,7 @@ export default function ThankYouPage() {
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95"
               >
-                <a href="tel:(949) 603-0389">
+                <a href="tel:(949) 603-0389" onClick={() => gtag_report_conversion()}>
                 <Phone className="mr-3 h-5 w-5" />
                 Call Us Now (949) 603-0389
                 </a>
@@ -217,7 +222,7 @@ export default function ThankYouPage() {
           asChild
           className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-lg hover:scale-105 transition-all duration-300 active:scale-95 shadow-lg hover:shadow-xl"
         >
-          <a href="tel:(949) 603-0389">
+          <a href="tel:(949) 603-0389" onClick={() => gtag_report_conversion()}>
           <Phone className="mr-2 h-4 w-4" />
           Call Now (949) 603-0389
           </a>

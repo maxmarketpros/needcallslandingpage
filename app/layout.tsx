@@ -36,6 +36,25 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Event snippet for Contact conversion page */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17503097114/S1P6CPCSx40bEJqikJpB',
+                    'event_callback': callback
+                });
+                return false;
+              }
+            `,
+          }}
+        />
         <style>{`
 html {
   font-family: ${GeistSans.style.fontFamily};
