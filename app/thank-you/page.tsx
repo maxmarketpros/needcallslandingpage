@@ -17,6 +17,10 @@ export default function ThankYouPage() {
 
   useEffect(() => {
     setIsLoaded(true)
+    // Track form submission conversion when user reaches thank you page
+    if (typeof gtag_report_conversion !== 'undefined') {
+      gtag_report_conversion()
+    }
   }, [])
 
   return (
